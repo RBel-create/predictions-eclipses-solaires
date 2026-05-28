@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Cache-busting : supprime le timestamp des noms de fichiers
+RewriteRule ^(.*)\.[0-9]+\.css$ $1\.css [L]
+RewriteRule ^(.*)\.[0-9]+\.js$ $1\.js [L]
+
+# URL propre pour les éclipses
+RewriteRule ^eclipse-(\d{4}-\d{2}-\d{2})/?$ index.php?date=$1 [L,QSA]
+RewriteRule ^eclipse-(\d{4}-\d{2}-\d{2})/([-\d.,]+)/?$ index.php?date=$1&view=$2 [L,QSA]
