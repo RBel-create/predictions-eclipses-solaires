@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); ?>/">
-    <title>Prédictions d'Éclipses Solaires</title>
+    <title>Cartographie d'Éclipses Solaires</title>
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     
     <!-- Leaflet CSS -->
@@ -59,7 +59,7 @@
     <footer id="sidebar-footer">
         <p class="credit">Eclipse Predictions by Fred Espenak,<br>NASA/GSFC Emeritus</p>
         <p class="about-link"><a href="about.html">À propos du projet</a></p>
-        <p class="license">GPL v3 — <a href="https://github.com/" target="_blank">Code source</a></p>
+        <p class="license">GPL v3 — <a href="https://github.com/RBel-create/predictions-eclipses-solaires" target="_blank">Code source</a></p>
     </footer>
 </aside>
 
