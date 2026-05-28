@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos — Prédictions d'Éclipses Solaires</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f0f2f5;
+            --bg-panel: #ffffff;
+            --border: #d4d9e3;
+            --text-primary: #1a1f2e;
+            --text-secondary: #5a6478;
+            --text-muted: #8896a8;
+            --font-body: 'Source Sans 3', system-ui, sans-serif;
+            --font-display: 'Source Serif 4', Georgia, serif;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .credits {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .credits p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        .limitations {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        
+        .limitations p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .limitations p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <a href="./" class="back-link">&larr; Retour à la carte</a>
+    
+    <h1>Prédictions d'Éclipses Solaires</h1>
+    <p class="subtitle">Carte interactive des éclipses solaires du XXI<sup>e</sup> siècle</p>
+    
+    <h2>Le projet</h2>
+    <p>Ce site affiche sur une carte interactive les éclipses solaires (totales, annulaires, hybrides et partielles) de 2021 à 2100, avec calcul en temps réel des circonstances locales pour tout point cliqué sur la carte.</p>
+    <p>Il s'inspire du travail remarquable de Xavier Jubier, membre de l'Union Astronomique Internationale, dont le <a href="http://xjubier.free.fr/" target="_blank">site de référence</a> sur les éclipses solaires n'est plus mis à jour depuis 2020. Ce projet vise à préserver et prolonger ce patrimoine culturel et scientifique en créant un équivalent open source, indépendant de toute API propriétaire.</p>
+    
+    <h2>Fonctionnalités</h2>
+    <p>Pour chaque éclipse centrale (totale, annulaire, hybride), le site affiche la bande de centralité sur la carte, le contour de la zone de visibilité partielle et la frontière jour/nuit. Un clic sur la carte calcule en temps réel les circonstances locales : heures des contacts, magnitude, obscuration, durée de totalité ou d'annularité, et position du Soleil.</p>
+    
+    <h2>Limitations</h2>
+    <div class="limitations">
+        <p>La précision des heures de contact est de l'ordre de quelques secondes. La durée de totalité est précise à ±1-2 secondes. Ces écarts proviennent principalement de l'absence de correction du profil du limbe lunaire (données LRO/Kaguya).</p>
+        <p>Le contour de la zone de visibilité est calculé par approximation numérique et peut présenter de légers artefacts aux hautes latitudes ou à proximité de la ligne de changement de date.</p>
+        <p>Les pays traversés sont déterminés à partir de la ligne centrale uniquement. Un pays traversé par le bord de la bande mais pas par la ligne centrale peut ne pas apparaitre dans la liste.</p>
+    </div>
+    
+    <h2>Données et algorithmes</h2>
+    <p>Les données d'éclipses proviennent du catalogue de Fred Espenak (NASA/GSFC), couvrant cinq millénaires d'éclipses solaires. Les circonstances locales sont calculées à partir des éléments de Bessel polynomiaux, selon les algorithmes décrits par Jean Meeus dans <em>Astronomical Algorithms</em>.</p>
+    <p>La cartographie utilise <a href="https://leafletjs.com" target="_blank">Leaflet</a> et les tuiles <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>.</p>
+    
+    <h2>Licence</h2>
+    <p>Ce projet est distribué sous licence <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPL v3</a>. Le code source sera prochainement disponible.</p>
+    
+    <div class="credits">
+        <p>Eclipse Predictions by Fred Espenak, NASA/GSFC Emeritus</p>
+        <p>Réf. : <em>Five Millennium Canon of Solar Eclipses: -1999 to +3000</em>, NASA TP-2006-214141</p>
+        <p>Éphémérides : VSOP87 (Bretagnon & Francou, 1988) — ELP-2000/82 (Chapront-Touzé & Chapront, 1983)</p>
+        <p>Inspiré par le travail de Xavier Jubier (UAI, Working Group on Solar Eclipses)</p>
+        <p>Développé par Claude — Opus 4.6 (Anthropic) — conception, algorithmes et code — sous la supervision de R. Bel</p>
+    </div>
+    
+</div>
+
+</body>
+</html>
