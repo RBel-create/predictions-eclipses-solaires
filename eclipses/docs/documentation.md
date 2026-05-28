@@ -1,7 +1,7 @@
 # Prédictions d'Éclipses Solaires — Documentation technique
 # Solar Eclipse Predictions — Technical Documentation
 
-Version 1.0 — Mai 2026
+Version 1.01 — Mai 2026
 
 ---
 
@@ -18,12 +18,12 @@ Version 1.0 — Mai 2026
 │   ├── scrape_paths.php        # Pass 3: path coordinates (central line, limits)
 │   ├── scrape_countries.php    # Pass 4: country geocoding via Nominatim (limited)
 │   └── schema.sql              # Database schema
-├── api/
-│   └── index.php               # REST API (list, path, besselian, detail, countries)
 ├── public/
 │   ├── .htaccess               # URL rewriting (cache-busting, eclipse URLs)
 │   ├── index.php               # Main page (Leaflet map)
 │   ├── about.html              # About page
+│   ├── api/
+│   │   └── index.php           # REST API (list, path, besselian, detail, countries)
 │   ├── css/
 │   │   └── style.css
 │   ├── js/
