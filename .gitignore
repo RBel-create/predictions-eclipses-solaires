@@ -1,0 +1,16 @@
+# Identifiants
+config.php
+
+# Backups
+*.backup
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editeurs
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
