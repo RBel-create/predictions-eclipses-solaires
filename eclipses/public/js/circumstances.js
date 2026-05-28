@@ -8,7 +8,7 @@
 const Circumstances = (function () {
     'use strict';
 
-    const API_BASE = '../api/index.php';
+    const API_BASE = 'api/index.php';
 
     // Cache des éléments de Bessel déjà chargés
     const besselianCache = {};

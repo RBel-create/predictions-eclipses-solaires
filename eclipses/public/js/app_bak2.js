@@ -243,7 +243,7 @@
                     addContinuousLine(coords, {
                         color: colors.stroke,
                         weight: 1,
-                        opacity: 0.3,
+                        opacity: 0.4,
                     }, layerGroup);
                 }
                 else if (role === 'south_limit') {
@@ -424,14 +424,9 @@
                     let northCoords = null;
                     let southCoords = null;
 
-                    // Décalage dynamique de correction NASA
-                    // Compense la différence de ΔT entre les données NASA et Bessel
-                    const eclipseYear = parseInt(eclipse.eclipse_date.substring(0, 4), 10);
-                    const lonOffset = -0.277 - (eclipseYear - 2020) * 0.57 / 80;
-
                     geojson.features.forEach(feature => {
                         const role = feature.properties.role;
-                        const coords = feature.geometry.coordinates.map(c => [c[0] + lonOffset, c[1]]);
+                        const coords = feature.geometry.coordinates;
 
                         if (role === 'central_line') {
                             // Détecter si la ligne centrale traverse l'antéméridien
