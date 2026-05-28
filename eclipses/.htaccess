@@ -1,0 +1,7 @@
+# Protection du fichier de configuration
+<Files "config.php">
+    Deny from all
+</Files>
+
+# Interdire le listing des répertoires
+Options -Indexes
