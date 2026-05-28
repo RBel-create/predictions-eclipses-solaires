@@ -289,6 +289,7 @@
 
     function renderList() {
         const container = document.getElementById('eclipse-list');
+        container.scrollTop = 0;
         const filtered = getFilteredEclipses();
 
         if (filtered.length === 0) {
